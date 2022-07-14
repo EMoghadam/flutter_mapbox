@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             layers: [
               TileLayerOptions(
                 urlTemplate:
-                    "https://api.mapbox.com/styles/v1/dhruv25/{mapStyleId}/tiles/256/{z}/{x}/{y}@2x?access_token={accessToken}",
+                "https://api.mapbox.com/styles/v1/dhruv25/cl5l0t619000j14q9utvkifcd/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibXJtb2doYWRhbSIsImEiOiJjbDVrdjd5bzAwZHBpM2JueG8yNmt1NG12In0.u02mDxlyoqNOTk5fyaP66A",
                 additionalOptions: {
                   'mapStyleId': AppConstants.mapBoxStyleId,
                   'accessToken': AppConstants.mapBoxAccessToken,
@@ -94,7 +94,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             left: 0,
             right: 0,
             bottom: 2,
-            height: MediaQuery.of(context).size.height * 0.3,
+            height: MediaQuery
+                .of(context)
+                .size
+                .height * 0.3,
             child: PageView.builder(
               controller: pageController,
               onPageChanged: (value) {
@@ -203,7 +206,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     // The animation determines what path the animation will take. You can try different Curves values, although I found
     // fastOutSlowIn to be my favorite.
     Animation<double> animation =
-        CurvedAnimation(parent: controller, curve: Curves.fastOutSlowIn);
+    CurvedAnimation(parent: controller, curve: Curves.fastOutSlowIn);
 
     controller.addListener(() {
       mapController.move(
